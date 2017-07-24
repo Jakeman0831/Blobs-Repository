@@ -1,0 +1,47 @@
+package com.example.moqui.blob;
+
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.widget.TextView;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ProgressBar;
+
+
+public class MainActivity extends AppCompatActivity {
+
+    ProgressBar LevelProgress;
+    ProgressBar HP;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        LevelProgress = (ProgressBar)this.findViewById(R.id.progressBar2);
+LevelProgress.setProgress(0);
+        HP = (ProgressBar)this.findViewById(R.id.progressBar);
+        HP.setProgress(100);
+    }
+    double totalTaps;
+    double LevelM = 0;
+    double Difficulty = 1;
+    public void buttonTestClick(View v){
+        totalTaps = totalTaps+1;
+            Button button = (Button)v;
+        HP.setProgress((int)((Difficulty-totalTaps)/Difficulty*100));
+        if(totalTaps == Difficulty+1){
+            LevelM = LevelM+1;
+LevelProgress.setProgress((int)(20*LevelM));
+            totalTaps = 0;
+            HP.setProgress(100);
+        }
+        if(LevelM == 5) {
+//Activity Change
+            LevelM = 0;
+            LevelProgress.setProgress(0);
+            Difficulty = Difficulty + 2;
+        }
+        }
+        }
+
+
