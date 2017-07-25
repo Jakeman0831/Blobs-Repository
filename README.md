@@ -1,2 +1,2 @@
 # Blobs-Repository
-Where to share code for our new tap based android app
+This is where to share individual java, xml and mainfest files.
