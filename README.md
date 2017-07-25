@@ -1,2 +1,2 @@
 # Blobs-Repository
-This is where to share individual java, xml and mainfest files.
+This is Jakes test branch that i upload to directly from Android Studio.
